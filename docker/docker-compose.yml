@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  autoapply:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: autoapply
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../data:/app/data
+      - ../db:/app/db
+      - ../logs:/app/logs
+    env_file:
+      - ../.env
+    restart: unless-stopped
+
+  scheduler:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: autoapply_scheduler
+    command: python scheduler/cron.py
+    volumes:
+      - ../data:/app/data
+      - ../db:/app/db
+      - ../logs:/app/logs
+    env_file:
+      - ../.env
+    depends_on:
+      - autoapply
+    restart: unless-stopped

@@ -1,0 +1,39 @@
+# Core AI Framework
+praisonai>=2.2.0
+praisonaiagents>=0.0.1
+openai>=1.30.0
+anthropologic>=0.25.0
+
+# Web Automation
+playwright>=1.44.0
+beautifulsoup4>=4.12.3
+requests>=2.31.0
+lxml>=5.2.1
+
+# Resume Parsing
+pdfplumber>=0.11.1
+python-docx>=1.1.2
+
+# API & Web
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Database
+sqlalchemy>=2.0.30
+alembic>=1.13.1
+
+# Scheduling
+apscheduler>=3.10.4
+
+# Notifications
+smtplib2>=0.2.1
+jinja2>=3.1.4
+
+# Utilities
+python-dotenv>=1.0.1
+loguru>=0.7.2
+pydantic>=2.7.1
+tenacity>=8.3.0
+tqdm>=4.66.4
+pytest>=8.2.1
